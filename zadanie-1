@@ -1,0 +1,25 @@
+import java.util.LinkedList;
+
+public class Queue<T> {
+    private LinkedList<T> queue = new LinkedList<>();
+
+    public void enqueue(T element) {
+        queue.addLast(element);
+    }
+
+    public T dequeue() {
+        return queue.removeFirst();
+    }
+
+    public T first() {
+        return queue.getFirst();
+    }
+
+    public void reverse() {
+        LinkedList<T> reversedQueue = new LinkedList<>();
+        while (!queue.isEmpty()) {
+            reversedQueue.push(queue.pop());
+        }
+        queue = reversedQueue;
+    }
+}
